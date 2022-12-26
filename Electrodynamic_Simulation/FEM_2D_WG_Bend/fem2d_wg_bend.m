@@ -101,7 +101,7 @@ switch solver
             % ***************************
     case 1  % direct sparse matrix solver
             % ***************************
-        spparms('autoamd',0);
+        spparms('autoamd',0); %we do not want autoamd, we want colamd
         permut=colamd(A); % Matrix reordering (bandwidth reduction)
         Vp = A (permut,permut) \ b(permut); % Direct solution
         Vc(permut)=Vp; % Mapping to the original numbering  
